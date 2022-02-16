@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Firearm database index</title>
+</head>
+<body>
+<h1>Welcome to Firearm database controller</h1>
+
+<button type="button" onclick="window.location.href='ListItemsServlet';">List firearm database, remove a firearm or edit</button>
+<h2>Add Items to the firearm database</h2>
+<form action="AddItemServlet" method="post">
+<label for="company">Company:</label><input type="text" name="company">
+<label for="type">Type:</label><input type="text" name="type">
+<input type="submit" value="Add Firearm">
+</form>
+</body>
+</html>
