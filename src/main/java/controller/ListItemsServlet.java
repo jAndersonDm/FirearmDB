@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.guns;
 import controller.dbHelper;
+import controller.dbInfoHelper;
 
 /**
  * Servlet implementation class ListItemsServlet
@@ -32,8 +33,9 @@ public class ListItemsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		dbHelper dbHelp = new dbHelper();
+		dbInfoHelper dbIH = new dbInfoHelper();
 		
-		request.setAttribute("allGuns", dbHelp.showGuns());
+		request.setAttribute("allGuns", dbIH.showInfo());
 		
 		String path = "/FirearmDB.jsp";
 

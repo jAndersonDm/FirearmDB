@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.guns;
+import model.gunInfo;
 import controller.dbHelper;
+import controller.dbInfoHelper;
 
 /**
  * Servlet implementation class NavServlet
@@ -38,6 +40,7 @@ public class NavServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		dbHelper dbH = new dbHelper();
+		dbInfoHelper dbIH = new dbInfoHelper();
 		String control = request.getParameter("eItem");
 
 		String path = "/ListItemsServlet";
@@ -47,6 +50,8 @@ public class NavServlet extends HttpServlet {
 				
 				Integer idT = Integer.parseInt(request.getParameter("id"));
 				guns delItem = dbH.searchId(idT);
+				gunInfo delInfo = dbIH.searchId(idT);
+				dbIH.deleteInfo(delInfo);
 				dbH.deleteGun(delItem);
 
 			} catch (NumberFormatException ex) {
@@ -57,7 +62,7 @@ public class NavServlet extends HttpServlet {
 			try {
 				
 				Integer idT = Integer.parseInt(request.getParameter("id"));
-				guns delItem = dbH.searchId(idT);
+				gunInfo delItem = dbIH.searchId(idT);
 				request.setAttribute("editIt", delItem);
 				path = "/edit.jsp";
 			} catch (NumberFormatException ex) {

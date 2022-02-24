@@ -11,9 +11,9 @@
 
 <h2>Edit a firearm </h2>
 <form action = "EditItemServlet" method="post">
-<label for="company">Company:</label><input type ="text" name = "company" value= "${editIt.company}"><br />
-<label for="type">Type:<input type="text" name="type"  value="${editIt.type}"></label>
-
+<label for="company">Company:</label><input type ="text" name = "company" value= "${editIt.gun.company}"><br />
+<label for="type">Type:<input type="text" name="type"  value="${editIt.gun.type}"></label>
+<label for="ammo">Ammunition:<input type="text" name="ammo"  value="${editIt.ammo}"></label>
 <br />
 <input type = "hidden" name = "id" value="${editIt.id}">
 <input type = "submit" value="Save">

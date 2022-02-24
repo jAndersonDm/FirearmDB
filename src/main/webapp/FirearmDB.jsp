@@ -19,9 +19,10 @@
 <table class="table table-striped table-hover">
 <c:forEach items="${requestScope.allGuns}" var="currentitem">
 <tr>
-   <td><input type="radio" name="id" value="${currentitem.id}"></td>
-   <td>${currentitem.company}</td>
-   <td>${currentitem.type}</td>
+   <td><input type="radio" name="id" value="${currentitem.gun.id}"></td>
+   <td>${currentitem.gun.company}</td>
+   <td>${currentitem.gun.type}</td>
+   <td>${currentitem.ammo}</td>
    </tr>
 </c:forEach>
 </table>
@@ -29,7 +30,6 @@
 <input type = "submit" value="delete" name="eItem">
 </form>
 </div>
-
 <button type="button" onclick="window.location.href='index.html';">Go back to main menu</button>
 
 </body>
